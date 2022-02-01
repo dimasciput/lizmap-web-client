@@ -1,4 +1,4 @@
-<qgis projectname="" saveDateTime="2021-11-30T15:43:02" saveUser="mdouchin" saveUserFull="mdouchin" version="3.16.11-Hannover">
+<qgis projectname="" saveDateTime="2022-02-01T17:50:11" saveUser="mdouchin" saveUserFull="mdouchin" version="3.16.15-Hannover">
   <homePath path=""></homePath>
   <title></title>
   <autotransaction active="0"></autotransaction>
@@ -430,9 +430,7 @@
         </fixedRange>
       </temporal>
       <customproperties>
-        <property key="dualview/previewExpressions">
-          <value>"id"</value>
-        </property>
+        <property key="dualview/previewExpressions" value="&quot;id&quot;"></property>
       </customproperties>
       <geometryOptions geometryPrecision="0" removeDuplicateNodes="0">
         <activeChecks type="StringList">
@@ -599,9 +597,7 @@
         </fixedRange>
       </temporal>
       <customproperties>
-        <property key="dualview/previewExpressions">
-          <value>"id"</value>
-        </property>
+        <property key="dualview/previewExpressions" value="&quot;id&quot;"></property>
         <property key="embeddedWidgets/count" value="0"></property>
         <property key="variableNames"></property>
         <property key="variableValues"></property>
@@ -917,7 +913,11 @@ def my_form_open(dialog, layer, feature):
       </temporal>
       <customproperties>
         <property key="QFieldSync/action" value="offline"></property>
-        <property key="QFieldSync/photo_naming" value="{&quot;generic_file&quot;: &quot;'DCIM/form-edition-upload_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.jpg'&quot;, &quot;text_file&quot;: &quot;'DCIM/form-edition-upload_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.jpg'&quot;, &quot;image_file&quot;: &quot;'DCIM/form-edition-upload_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.jpg'&quot;, &quot;text_file_mandatory&quot;: &quot;'DCIM/form-edition-upload_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.jpg'&quot;, &quot;image_file_mandatory&quot;: &quot;'DCIM/form-edition-upload_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.jpg'&quot;}"></property>
+        <property key="QFieldSync/cloud_action" value="offline"></property>
+        <property key="QFieldSync/photo_naming" value="{&quot;generic_file&quot;: &quot;'DCIM/form-edition-upload_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.jpg'&quot;, &quot;text_file&quot;: &quot;'DCIM/form-edition-upload_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.jpg'&quot;, &quot;image_file&quot;: &quot;'DCIM/form-edition-upload_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.jpg'&quot;, &quot;text_file_mandatory&quot;: &quot;'DCIM/form-edition-upload_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.jpg'&quot;, &quot;image_file_mandatory&quot;: &quot;'DCIM/form-edition-upload_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.jpg'&quot;, &quot;image_file_specific_root_folder&quot;: &quot;'DCIM/form-edition-upload_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.jpg'&quot;}"></property>
+        <property key="dualview/previewExpressions">
+          <value>"id"</value>
+        </property>
         <property key="embeddedWidgets/count" value="0"></property>
         <property key="variableNames"></property>
         <property key="variableValues"></property>
@@ -1032,10 +1032,32 @@ def my_form_open(dialog, layer, feature):
                 <Option name="FileWidgetFilter" type="QString" value="Images png (*.png);;Images jpeg (*.jpg *.jpeg)"></Option>
                 <Option name="PropertyCollection" type="Map">
                   <Option name="name" type="QString" value=""></Option>
-                  <Option name="properties" type="invalid"></Option>
+                  <Option name="properties"></Option>
                   <Option name="type" type="QString" value="collection"></Option>
                 </Option>
                 <Option name="RelativeStorage" type="int" value="0"></Option>
+                <Option name="StorageMode" type="int" value="0"></Option>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="image_file_specific_root_folder">
+          <editWidget type="ExternalResource">
+            <config>
+              <Option type="Map">
+                <Option name="DefaultRoot" type="QString" value="../media/specific_media_folder"></Option>
+                <Option name="DocumentViewer" type="int" value="1"></Option>
+                <Option name="DocumentViewerHeight" type="int" value="0"></Option>
+                <Option name="DocumentViewerWidth" type="int" value="0"></Option>
+                <Option name="FileWidget" type="bool" value="true"></Option>
+                <Option name="FileWidgetButton" type="bool" value="false"></Option>
+                <Option name="FileWidgetFilter" type="QString" value=""></Option>
+                <Option name="PropertyCollection" type="Map">
+                  <Option name="name" type="QString" value=""></Option>
+                  <Option name="properties"></Option>
+                  <Option name="type" type="QString" value="collection"></Option>
+                </Option>
+                <Option name="RelativeStorage" type="int" value="1"></Option>
                 <Option name="StorageMode" type="int" value="0"></Option>
               </Option>
             </config>
@@ -1049,6 +1071,7 @@ def my_form_open(dialog, layer, feature):
         <alias field="image_file" index="3" name=""></alias>
         <alias field="text_file_mandatory" index="4" name=""></alias>
         <alias field="image_file_mandatory" index="5" name=""></alias>
+        <alias field="image_file_specific_root_folder" index="6" name=""></alias>
       </aliases>
       <defaults>
         <default applyOnUpdate="0" expression="" field="id"></default>
@@ -1057,6 +1080,7 @@ def my_form_open(dialog, layer, feature):
         <default applyOnUpdate="0" expression="" field="image_file"></default>
         <default applyOnUpdate="0" expression="" field="text_file_mandatory"></default>
         <default applyOnUpdate="0" expression="" field="image_file_mandatory"></default>
+        <default applyOnUpdate="0" expression="" field="image_file_specific_root_folder"></default>
       </defaults>
       <constraints>
         <constraint constraints="3" exp_strength="0" field="id" notnull_strength="1" unique_strength="1"></constraint>
@@ -1065,6 +1089,7 @@ def my_form_open(dialog, layer, feature):
         <constraint constraints="0" exp_strength="0" field="image_file" notnull_strength="0" unique_strength="0"></constraint>
         <constraint constraints="1" exp_strength="0" field="text_file_mandatory" notnull_strength="1" unique_strength="0"></constraint>
         <constraint constraints="1" exp_strength="0" field="image_file_mandatory" notnull_strength="1" unique_strength="0"></constraint>
+        <constraint constraints="0" exp_strength="0" field="image_file_specific_root_folder" notnull_strength="0" unique_strength="0"></constraint>
       </constraints>
       <constraintExpressions>
         <constraint desc="" exp="" field="id"></constraint>
@@ -1073,6 +1098,7 @@ def my_form_open(dialog, layer, feature):
         <constraint desc="" exp="" field="image_file"></constraint>
         <constraint desc="" exp="" field="text_file_mandatory"></constraint>
         <constraint desc="" exp="" field="image_file_mandatory"></constraint>
+        <constraint desc="" exp="" field="image_file_specific_root_folder"></constraint>
       </constraintExpressions>
       <expressionfields></expressionfields>
       <attributeactions>
@@ -1084,9 +1110,10 @@ def my_form_open(dialog, layer, feature):
           <column hidden="0" name="text_file" type="field" width="-1"></column>
           <column hidden="0" name="image_file" type="field" width="-1"></column>
           <column hidden="0" name="text_file_mandatory" type="field" width="-1"></column>
-          <column hidden="0" name="image_file_mandatory" type="field" width="-1"></column>
+          <column hidden="0" name="image_file_mandatory" type="field" width="325"></column>
           <column hidden="1" type="actions" width="-1"></column>
           <column hidden="0" name="generic_file" type="field" width="-1"></column>
+          <column hidden="0" name="image_file_specific_root_folder" type="field" width="749"></column>
         </columns>
       </attributetableconfig>
       <conditionalstyles>
@@ -1121,6 +1148,7 @@ def my_form_open(dialog, layer, feature):
         <field editable="1" name="id"></field>
         <field editable="1" name="image_file"></field>
         <field editable="1" name="image_file_mandatory"></field>
+        <field editable="1" name="image_file_specific_root_folder"></field>
         <field editable="1" name="text_file"></field>
         <field editable="1" name="text_file_mandatory"></field>
       </editable>
@@ -1129,6 +1157,7 @@ def my_form_open(dialog, layer, feature):
         <field labelOnTop="0" name="id"></field>
         <field labelOnTop="0" name="image_file"></field>
         <field labelOnTop="0" name="image_file_mandatory"></field>
+        <field labelOnTop="0" name="image_file_specific_root_folder"></field>
         <field labelOnTop="0" name="text_file"></field>
         <field labelOnTop="0" name="text_file_mandatory"></field>
       </labelOnTop>
@@ -1324,7 +1353,7 @@ def my_form_open(dialog, layer, feature):
   <Bookmarks></Bookmarks>
   <ProjectViewSettings UseProjectScales="0">
     <Scales></Scales>
-    <DefaultViewExtent xmax="1.7628992628992628" xmin="-1.7628992628992628" ymax="1.30982771055852654" ymin="-1.30982771055852654">
+    <DefaultViewExtent xmax="1.7628992628992628" xmin="-1.7628992628992628" ymax="1.51550354849611346" ymin="-1.51550354849611346">
       <spatialrefsys>
         <wkt>PROJCRS["RGF93 / Lambert-93",BASEGEOGCRS["RGF93",DATUM["Reseau Geodesique Francais 1993",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4171]],CONVERSION["Lambert-93",METHOD["Lambert Conic Conformal (2SP)",ID["EPSG",9802]],PARAMETER["Latitude of false origin",46.5,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8821]],PARAMETER["Longitude of false origin",3,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8822]],PARAMETER["Latitude of 1st standard parallel",49,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8823]],PARAMETER["Latitude of 2nd standard parallel",44,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8824]],PARAMETER["Easting at false origin",700000,LENGTHUNIT["metre",1],ID["EPSG",8826]],PARAMETER["Northing at false origin",6600000,LENGTHUNIT["metre",1],ID["EPSG",8827]]],CS[Cartesian,2],AXIS["easting (X)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["northing (Y)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["France"],BBOX[41.15,-9.86,51.56,10.38]],ID["EPSG",2154]]</wkt>
         <proj4>+proj=lcc +lat_0=46.5 +lon_0=3 +lat_1=49 +lat_2=44 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>

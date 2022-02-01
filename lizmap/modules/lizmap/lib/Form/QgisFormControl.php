@@ -708,7 +708,8 @@ class QgisFormControl
         $targetFullPath = $repPath.$targetPath;
         // Else use given root, but only if it is a child or brother of the repository path
         if (!empty($this->DefaultRoot)) {
-            $fullPath = \Jelix\FileUtilities\Path::normalizePath($repPath.$this->DefaultRoot);
+            // We add $options = 1 to add the trailing slash
+            $fullPath = \Jelix\FileUtilities\Path::normalizePath($repPath.$this->DefaultRoot, 1);
             $parentPath = realpath($repPath.'../');
             if (strpos($fullPath, $repPath) === 0
                 || strpos($fullPath, $parentPath) === 0
